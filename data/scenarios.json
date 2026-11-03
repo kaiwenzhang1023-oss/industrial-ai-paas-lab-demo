@@ -1,0 +1,706 @@
+{
+  "normal": {
+    "id": "normal",
+    "name": "A · 正常生产与物料齐套",
+    "tag": "NORMAL",
+    "risk": "LOW",
+    "summary": {
+      "problem": "订单正常推进，关键物料满足需求",
+      "finding": "MRP 核算齐套；MES 生产按计划推进",
+      "advice": "保持生产节奏并监控库存安全线",
+      "decision": "例行监控，无需额外采购审批",
+      "impact": "预期按期交付；无新增缺料风险"
+    },
+    "metrics": {
+      "order_qty": 100,
+      "finished_qty": 72,
+      "completion_pct": 72.0,
+      "material_shortage_qty": 0,
+      "supplier_delay_days": 0,
+      "mapping_status": "VALIDATED"
+    },
+    "links": {
+      "run_id": "MRP-NORMAL",
+      "work_order_id": "MO-NORMAL",
+      "pr_id": "PR-NORMAL",
+      "mapping_id": "MAP-NORMAL",
+      "event_id": "EVT-NORMAL",
+      "advice_id": "ADV-NORMAL",
+      "order_id": "SO-EM100-A",
+      "bom_version": "BOM-EM100-V1"
+    },
+    "modules": {
+      "mrp/requirements": [
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "run_id": "MRP-NORMAL",
+          "material_id": "MOTOR-CORE",
+          "required_qty": 100,
+          "available_qty": 120,
+          "shortage_qty": 0,
+          "uom": "EA",
+          "bom_version": "BOM-EM100-V1"
+        },
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "run_id": "MRP-NORMAL",
+          "material_id": "BEARING",
+          "required_qty": 200,
+          "available_qty": 260,
+          "shortage_qty": 0,
+          "uom": "EA",
+          "bom_version": "BOM-EM100-V1"
+        }
+      ],
+      "mes/work-orders": [
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "work_order_id": "MO-NORMAL",
+          "quantity": 100,
+          "finished_good_qty": 72,
+          "remaining_qty": 28,
+          "due_date": "2026-11-30",
+          "status": "IN_PROGRESS",
+          "work_center": "ASSEMBLY-A",
+          "bom_version": "BOM-EM100-V1"
+        }
+      ],
+      "srm/requisitions": [
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "pr_id": "PR-NORMAL-MOTOR-CORE",
+          "source_run_id": "MRP-NORMAL",
+          "material_id": "MOTOR-CORE",
+          "quantity": 0,
+          "uom": "EA",
+          "status": "NOT_REQUIRED"
+        },
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "pr_id": "PR-NORMAL-BEARING",
+          "source_run_id": "MRP-NORMAL",
+          "material_id": "BEARING",
+          "quantity": 0,
+          "uom": "EA",
+          "status": "NOT_REQUIRED"
+        }
+      ],
+      "srm/exceptions": [
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "exception_id": "EX-NORMAL",
+          "exception_type": "NONE",
+          "risk_qty": 0,
+          "late_days": 0,
+          "status": "CLEAR"
+        }
+      ],
+      "mapping/versions": [
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "mapping_id": "MAP-NORMAL",
+          "mapping_version": "BOM-EM100-V1",
+          "source_system": "ERP",
+          "target_system": "MES",
+          "status": "VALIDATED"
+        }
+      ],
+      "mapping/executions": [
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "execution_id": "EXEC-NORMAL",
+          "mapping_id": "MAP-NORMAL",
+          "mapping_version": "BOM-EM100-V1",
+          "records": 1,
+          "status": "VALIDATED"
+        }
+      ],
+      "workflow/audit": [
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "event_id": "EVT-NORMAL-01",
+          "step": "ORDER_CONFIRMED",
+          "status": "COMPLETED_SIMULATION",
+          "actor": "ERP"
+        },
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "event_id": "EVT-NORMAL-02",
+          "step": "MRP_EVALUATED",
+          "status": "COMPLETED_SIMULATION",
+          "actor": "MRP"
+        },
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "event_id": "EVT-NORMAL-03",
+          "step": "HUMAN_REVIEW",
+          "status": "NOT_REQUIRED",
+          "actor": "HITL"
+        }
+      ],
+      "agent/advice": [
+        {
+          "scenario_id": "normal",
+          "order_id": "SO-EM100-A",
+          "product_id": "EM-100",
+          "advice_id": "ADV-NORMAL",
+          "risk": "LOW",
+          "suggestion": "保持生产节奏并监控库存安全线",
+          "basis": "MRP 核算齐套；MES 生产按计划推进",
+          "status": "DRAFT_SIMULATION",
+          "requires_human_approval": true
+        }
+      ]
+    }
+  },
+  "shortage": {
+    "id": "shortage",
+    "name": "B · 关键物料库存不足",
+    "tag": "MATERIAL_SHORTAGE",
+    "risk": "HIGH",
+    "summary": {
+      "problem": "电机铁芯及轴承库存低于订单物料需求",
+      "finding": "MRP 识别物料缺口，SRM 生成待审核采购申请",
+      "advice": "优先确认缺口物料到货日，评估分批采购",
+      "decision": "采购申请等待人工审批，不执行真实下单",
+      "impact": "若采购到货及时，可降低停线风险"
+    },
+    "metrics": {
+      "order_qty": 120,
+      "finished_qty": 36,
+      "completion_pct": 30.0,
+      "material_shortage_qty": 185,
+      "supplier_delay_days": 2,
+      "mapping_status": "VALIDATED"
+    },
+    "links": {
+      "run_id": "MRP-SHORTAGE",
+      "work_order_id": "MO-SHORTAGE",
+      "pr_id": "PR-SHORTAGE",
+      "mapping_id": "MAP-SHORTAGE",
+      "event_id": "EVT-SHORTAGE",
+      "advice_id": "ADV-SHORTAGE",
+      "order_id": "SO-EM100-B",
+      "bom_version": "BOM-EM100-V1"
+    },
+    "modules": {
+      "mrp/requirements": [
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "run_id": "MRP-SHORTAGE",
+          "material_id": "MOTOR-CORE",
+          "required_qty": 120,
+          "available_qty": 65,
+          "shortage_qty": 55,
+          "uom": "EA",
+          "bom_version": "BOM-EM100-V1"
+        },
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "run_id": "MRP-SHORTAGE",
+          "material_id": "BEARING",
+          "required_qty": 240,
+          "available_qty": 110,
+          "shortage_qty": 130,
+          "uom": "EA",
+          "bom_version": "BOM-EM100-V1"
+        }
+      ],
+      "mes/work-orders": [
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "work_order_id": "MO-SHORTAGE",
+          "quantity": 120,
+          "finished_good_qty": 36,
+          "remaining_qty": 84,
+          "due_date": "2026-12-02",
+          "status": "IN_PROGRESS",
+          "work_center": "ASSEMBLY-A",
+          "bom_version": "BOM-EM100-V1"
+        }
+      ],
+      "srm/requisitions": [
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "pr_id": "PR-SHORTAGE-MOTOR-CORE",
+          "source_run_id": "MRP-SHORTAGE",
+          "material_id": "MOTOR-CORE",
+          "quantity": 55,
+          "uom": "EA",
+          "status": "PENDING_HUMAN_APPROVAL"
+        },
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "pr_id": "PR-SHORTAGE-BEARING",
+          "source_run_id": "MRP-SHORTAGE",
+          "material_id": "BEARING",
+          "quantity": 130,
+          "uom": "EA",
+          "status": "PENDING_HUMAN_APPROVAL"
+        }
+      ],
+      "srm/exceptions": [
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "exception_id": "EX-SHORTAGE",
+          "exception_type": "MATERIAL_SHORTAGE",
+          "risk_qty": 185,
+          "late_days": 2,
+          "status": "OPEN"
+        }
+      ],
+      "mapping/versions": [
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "mapping_id": "MAP-SHORTAGE",
+          "mapping_version": "BOM-EM100-V1",
+          "source_system": "ERP",
+          "target_system": "MES",
+          "status": "VALIDATED"
+        }
+      ],
+      "mapping/executions": [
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "execution_id": "EXEC-SHORTAGE",
+          "mapping_id": "MAP-SHORTAGE",
+          "mapping_version": "BOM-EM100-V1",
+          "records": 1,
+          "status": "VALIDATED"
+        }
+      ],
+      "workflow/audit": [
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "event_id": "EVT-SHORTAGE-01",
+          "step": "ORDER_CONFIRMED",
+          "status": "COMPLETED_SIMULATION",
+          "actor": "ERP"
+        },
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "event_id": "EVT-SHORTAGE-02",
+          "step": "MRP_EVALUATED",
+          "status": "COMPLETED_SIMULATION",
+          "actor": "MRP"
+        },
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "event_id": "EVT-SHORTAGE-03",
+          "step": "HUMAN_REVIEW",
+          "status": "WAITING_HUMAN_REVIEW",
+          "actor": "HITL"
+        }
+      ],
+      "agent/advice": [
+        {
+          "scenario_id": "shortage",
+          "order_id": "SO-EM100-B",
+          "product_id": "EM-100",
+          "advice_id": "ADV-SHORTAGE",
+          "risk": "HIGH",
+          "suggestion": "优先确认缺口物料到货日，评估分批采购",
+          "basis": "MRP 识别物料缺口，SRM 生成待审核采购申请",
+          "status": "DRAFT_SIMULATION",
+          "requires_human_approval": true
+        }
+      ]
+    }
+  },
+  "delay": {
+    "id": "delay",
+    "name": "C · 生产延期与交付风险",
+    "tag": "DELIVERY_DELAY",
+    "risk": "HIGH",
+    "summary": {
+      "problem": "MES 完工进度偏低，供应商交期延迟",
+      "finding": "跨 MES 与 SRM 数据识别交付窗口风险",
+      "advice": "核对工序瓶颈并评估产能调整与客户沟通",
+      "decision": "计划员人工复核排产及交期承诺",
+      "impact": "提前识别风险，避免未经批准自动改期"
+    },
+    "metrics": {
+      "order_qty": 90,
+      "finished_qty": 24,
+      "completion_pct": 26.7,
+      "material_shortage_qty": 0,
+      "supplier_delay_days": 6,
+      "mapping_status": "VALIDATED"
+    },
+    "links": {
+      "run_id": "MRP-DELAY",
+      "work_order_id": "MO-DELAY",
+      "pr_id": "PR-DELAY",
+      "mapping_id": "MAP-DELAY",
+      "event_id": "EVT-DELAY",
+      "advice_id": "ADV-DELAY",
+      "order_id": "SO-EM100-C",
+      "bom_version": "BOM-EM100-V1"
+    },
+    "modules": {
+      "mrp/requirements": [
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "run_id": "MRP-DELAY",
+          "material_id": "MOTOR-CORE",
+          "required_qty": 90,
+          "available_qty": 90,
+          "shortage_qty": 0,
+          "uom": "EA",
+          "bom_version": "BOM-EM100-V1"
+        },
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "run_id": "MRP-DELAY",
+          "material_id": "BEARING",
+          "required_qty": 180,
+          "available_qty": 180,
+          "shortage_qty": 0,
+          "uom": "EA",
+          "bom_version": "BOM-EM100-V1"
+        }
+      ],
+      "mes/work-orders": [
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "work_order_id": "MO-DELAY",
+          "quantity": 90,
+          "finished_good_qty": 24,
+          "remaining_qty": 66,
+          "due_date": "2026-11-24",
+          "status": "DELAY_RISK",
+          "work_center": "ASSEMBLY-A",
+          "bom_version": "BOM-EM100-V1"
+        }
+      ],
+      "srm/requisitions": [
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "pr_id": "PR-DELAY-MOTOR-CORE",
+          "source_run_id": "MRP-DELAY",
+          "material_id": "MOTOR-CORE",
+          "quantity": 0,
+          "uom": "EA",
+          "status": "NOT_REQUIRED"
+        },
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "pr_id": "PR-DELAY-BEARING",
+          "source_run_id": "MRP-DELAY",
+          "material_id": "BEARING",
+          "quantity": 0,
+          "uom": "EA",
+          "status": "NOT_REQUIRED"
+        }
+      ],
+      "srm/exceptions": [
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "exception_id": "EX-DELAY",
+          "exception_type": "SUPPLIER_DELAY",
+          "risk_qty": 0,
+          "late_days": 6,
+          "status": "OPEN"
+        }
+      ],
+      "mapping/versions": [
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "mapping_id": "MAP-DELAY",
+          "mapping_version": "BOM-EM100-V1",
+          "source_system": "ERP",
+          "target_system": "MES",
+          "status": "VALIDATED"
+        }
+      ],
+      "mapping/executions": [
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "execution_id": "EXEC-DELAY",
+          "mapping_id": "MAP-DELAY",
+          "mapping_version": "BOM-EM100-V1",
+          "records": 1,
+          "status": "VALIDATED"
+        }
+      ],
+      "workflow/audit": [
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "event_id": "EVT-DELAY-01",
+          "step": "ORDER_CONFIRMED",
+          "status": "COMPLETED_SIMULATION",
+          "actor": "ERP"
+        },
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "event_id": "EVT-DELAY-02",
+          "step": "MRP_EVALUATED",
+          "status": "COMPLETED_SIMULATION",
+          "actor": "MRP"
+        },
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "event_id": "EVT-DELAY-03",
+          "step": "HUMAN_REVIEW",
+          "status": "WAITING_HUMAN_REVIEW",
+          "actor": "HITL"
+        }
+      ],
+      "agent/advice": [
+        {
+          "scenario_id": "delay",
+          "order_id": "SO-EM100-C",
+          "product_id": "EM-100",
+          "advice_id": "ADV-DELAY",
+          "risk": "HIGH",
+          "suggestion": "核对工序瓶颈并评估产能调整与客户沟通",
+          "basis": "跨 MES 与 SRM 数据识别交付窗口风险",
+          "status": "DRAFT_SIMULATION",
+          "requires_human_approval": true
+        }
+      ]
+    }
+  },
+  "bom_change": {
+    "id": "bom_change",
+    "name": "D · BOM 变更与映射异常",
+    "tag": "BOM_MAPPING_EXCEPTION",
+    "risk": "MEDIUM",
+    "summary": {
+      "problem": "BOM 版本更新导致 ERP→MES 物料字段映射冲突",
+      "finding": "Mapping 校验阻断不一致记录，Workflow 等待人工复核",
+      "advice": "核对版本快照与字段映射后重新评估",
+      "decision": "人工签核前禁止将异常映射用于生产",
+      "impact": "降低错误 BOM 下发和错误采购风险"
+    },
+    "metrics": {
+      "order_qty": 80,
+      "finished_qty": 0,
+      "completion_pct": 0.0,
+      "material_shortage_qty": 0,
+      "supplier_delay_days": 0,
+      "mapping_status": "BLOCKED_REVIEW"
+    },
+    "links": {
+      "run_id": "MRP-BOM-CHANGE",
+      "work_order_id": "MO-BOM-CHANGE",
+      "pr_id": "PR-BOM-CHANGE",
+      "mapping_id": "MAP-BOM-CHANGE",
+      "event_id": "EVT-BOM-CHANGE",
+      "advice_id": "ADV-BOM-CHANGE",
+      "order_id": "SO-EM100-D",
+      "bom_version": "BOM-EM100-V2"
+    },
+    "modules": {
+      "mrp/requirements": [
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "run_id": "MRP-BOM-CHANGE",
+          "material_id": "MOTOR-CORE",
+          "required_qty": 80,
+          "available_qty": 80,
+          "shortage_qty": 0,
+          "uom": "EA",
+          "bom_version": "BOM-EM100-V2"
+        },
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "run_id": "MRP-BOM-CHANGE",
+          "material_id": "BEARING",
+          "required_qty": 160,
+          "available_qty": 160,
+          "shortage_qty": 0,
+          "uom": "EA",
+          "bom_version": "BOM-EM100-V2"
+        }
+      ],
+      "mes/work-orders": [
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "work_order_id": "MO-BOM-CHANGE",
+          "quantity": 80,
+          "finished_good_qty": 0,
+          "remaining_qty": 80,
+          "due_date": "2026-12-08",
+          "status": "BLOCKED_MAPPING",
+          "work_center": "ASSEMBLY-A",
+          "bom_version": "BOM-EM100-V2"
+        }
+      ],
+      "srm/requisitions": [
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "pr_id": "PR-BOM-CHANGE-MOTOR-CORE",
+          "source_run_id": "MRP-BOM-CHANGE",
+          "material_id": "MOTOR-CORE",
+          "quantity": 0,
+          "uom": "EA",
+          "status": "NOT_REQUIRED"
+        },
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "pr_id": "PR-BOM-CHANGE-BEARING",
+          "source_run_id": "MRP-BOM-CHANGE",
+          "material_id": "BEARING",
+          "quantity": 0,
+          "uom": "EA",
+          "status": "NOT_REQUIRED"
+        }
+      ],
+      "srm/exceptions": [
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "exception_id": "EX-BOM-CHANGE",
+          "exception_type": "NONE",
+          "risk_qty": 0,
+          "late_days": 0,
+          "status": "CLEAR"
+        }
+      ],
+      "mapping/versions": [
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "mapping_id": "MAP-BOM-CHANGE",
+          "mapping_version": "BOM-EM100-V2",
+          "source_system": "ERP",
+          "target_system": "MES",
+          "status": "BLOCKED_REVIEW"
+        }
+      ],
+      "mapping/executions": [
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "execution_id": "EXEC-BOM-CHANGE",
+          "mapping_id": "MAP-BOM-CHANGE",
+          "mapping_version": "BOM-EM100-V2",
+          "records": 1,
+          "status": "BLOCKED_REVIEW"
+        }
+      ],
+      "workflow/audit": [
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "event_id": "EVT-BOM-CHANGE-01",
+          "step": "ORDER_CONFIRMED",
+          "status": "COMPLETED_SIMULATION",
+          "actor": "ERP"
+        },
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "event_id": "EVT-BOM-CHANGE-02",
+          "step": "MRP_EVALUATED",
+          "status": "COMPLETED_SIMULATION",
+          "actor": "MRP"
+        },
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "event_id": "EVT-BOM-CHANGE-03",
+          "step": "HUMAN_REVIEW",
+          "status": "WAITING_HUMAN_REVIEW",
+          "actor": "HITL"
+        }
+      ],
+      "agent/advice": [
+        {
+          "scenario_id": "bom_change",
+          "order_id": "SO-EM100-D",
+          "product_id": "EM-100",
+          "advice_id": "ADV-BOM-CHANGE",
+          "risk": "MEDIUM",
+          "suggestion": "核对版本快照与字段映射后重新评估",
+          "basis": "Mapping 校验阻断不一致记录，Workflow 等待人工复核",
+          "status": "DRAFT_SIMULATION",
+          "requires_human_approval": true
+        }
+      ]
+    }
+  }
+}

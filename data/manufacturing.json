@@ -1,0 +1,904 @@
+{
+  "metadata": {
+    "title": "工业电机制造业教学模拟数据",
+    "isSimulation": true,
+    "isRealEnterpriseData": false,
+    "reference": "历史 V1.4 黄金样例为单独回归基准；本数据为新增行业合理化假设，不宣称为真实工厂 BOM",
+    "bomVersion": "BOM-EM100-V1",
+    "planning_engine": "V1.9-B daily-bucket deterministic, no capacity constraints",
+    "as_of": "2026-11-03"
+  },
+  "product": {
+    "id": "EM-100",
+    "name": "三相异步工业电机（教学示例）"
+  },
+  "items": [
+    {
+      "id": "ST-100",
+      "name": "定子总成",
+      "type": "MAKE",
+      "uom": "EA",
+      "leadDays": 2,
+      "moq": 1,
+      "lot": 1,
+      "supplier": null,
+      "unitCost": 8.0,
+      "scrap": 0
+    },
+    {
+      "id": "RT-100",
+      "name": "转子总成",
+      "type": "MAKE",
+      "uom": "EA",
+      "leadDays": 2,
+      "moq": 1,
+      "lot": 1,
+      "supplier": null,
+      "unitCost": 10.6,
+      "scrap": 0
+    },
+    {
+      "id": "BR-01",
+      "name": "深沟球轴承 6205",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 7,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-03",
+      "unitCost": 13.2,
+      "scrap": 0
+    },
+    {
+      "id": "HS-01",
+      "name": "铸铁机座",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 10,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-04",
+      "unitCost": 15.8,
+      "scrap": 0
+    },
+    {
+      "id": "EC-01",
+      "name": "前端盖",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 9,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-05",
+      "unitCost": 18.4,
+      "scrap": 0
+    },
+    {
+      "id": "EC-02",
+      "name": "后端盖",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 9,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-06",
+      "unitCost": 21.0,
+      "scrap": 0
+    },
+    {
+      "id": "FN-01",
+      "name": "散热风扇",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 5,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-07",
+      "unitCost": 23.6,
+      "scrap": 0
+    },
+    {
+      "id": "FC-01",
+      "name": "风罩",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 7,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-01",
+      "unitCost": 26.2,
+      "scrap": 0
+    },
+    {
+      "id": "TB-01",
+      "name": "接线盒",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 8,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-02",
+      "unitCost": 28.8,
+      "scrap": 0
+    },
+    {
+      "id": "TM-01",
+      "name": "接线端子",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 6,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-03",
+      "unitCost": 31.4,
+      "scrap": 0
+    },
+    {
+      "id": "GS-01",
+      "name": "密封垫",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 5,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-04",
+      "unitCost": 34.0,
+      "scrap": 0
+    },
+    {
+      "id": "BL-01",
+      "name": "紧固螺栓 M8",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 4,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-05",
+      "unitCost": 36.6,
+      "scrap": 0
+    },
+    {
+      "id": "WS-01",
+      "name": "弹簧垫圈",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 4,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-06",
+      "unitCost": 39.2,
+      "scrap": 0
+    },
+    {
+      "id": "LB-01",
+      "name": "铭牌",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 5,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-07",
+      "unitCost": 41.8,
+      "scrap": 0
+    },
+    {
+      "id": "PK-01",
+      "name": "包装箱",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 4,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-01",
+      "unitCost": 44.4,
+      "scrap": 0
+    },
+    {
+      "id": "SC-01",
+      "name": "定子冲片叠压件",
+      "type": "MAKE",
+      "uom": "EA",
+      "leadDays": 2,
+      "moq": 1,
+      "lot": 1,
+      "supplier": null,
+      "unitCost": 47.0,
+      "scrap": 0
+    },
+    {
+      "id": "CW-01",
+      "name": "定子绕组",
+      "type": "MAKE",
+      "uom": "EA",
+      "leadDays": 2,
+      "moq": 1,
+      "lot": 1,
+      "supplier": null,
+      "unitCost": 49.6,
+      "scrap": 0
+    },
+    {
+      "id": "RC-01",
+      "name": "转子铁芯",
+      "type": "MAKE",
+      "uom": "EA",
+      "leadDays": 2,
+      "moq": 1,
+      "lot": 1,
+      "supplier": null,
+      "unitCost": 52.2,
+      "scrap": 0
+    },
+    {
+      "id": "SH-01",
+      "name": "电机转轴",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 12,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-05",
+      "unitCost": 54.8,
+      "scrap": 0
+    },
+    {
+      "id": "CU-01",
+      "name": "漆包铜线",
+      "type": "BUY",
+      "uom": "KG",
+      "leadDays": 14,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-06",
+      "unitCost": 57.4,
+      "scrap": 0.03
+    },
+    {
+      "id": "SI-01",
+      "name": "硅钢片",
+      "type": "BUY",
+      "uom": "KG",
+      "leadDays": 14,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-07",
+      "unitCost": 60.0,
+      "scrap": 0.02
+    },
+    {
+      "id": "IN-01",
+      "name": "槽绝缘纸",
+      "type": "BUY",
+      "uom": "M",
+      "leadDays": 7,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-01",
+      "unitCost": 62.6,
+      "scrap": 0.02
+    },
+    {
+      "id": "IM-01",
+      "name": "浸渍绝缘漆",
+      "type": "BUY",
+      "uom": "KG",
+      "leadDays": 12,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-02",
+      "unitCost": 65.2,
+      "scrap": 0.04
+    },
+    {
+      "id": "WG-01",
+      "name": "绕组引接线",
+      "type": "BUY",
+      "uom": "M",
+      "leadDays": 6,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-03",
+      "unitCost": 67.8,
+      "scrap": 0
+    },
+    {
+      "id": "SK-01",
+      "name": "轴键",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 6,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-04",
+      "unitCost": 70.4,
+      "scrap": 0
+    },
+    {
+      "id": "RB-01",
+      "name": "转子铝条",
+      "type": "BUY",
+      "uom": "KG",
+      "leadDays": 13,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-05",
+      "unitCost": 73.0,
+      "scrap": 0.03
+    },
+    {
+      "id": "RN-01",
+      "name": "转子端环",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 10,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-06",
+      "unitCost": 75.6,
+      "scrap": 0
+    },
+    {
+      "id": "SP-01",
+      "name": "轴用挡圈",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 5,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-07",
+      "unitCost": 78.2,
+      "scrap": 0
+    },
+    {
+      "id": "GR-01",
+      "name": "润滑脂",
+      "type": "BUY",
+      "uom": "KG",
+      "leadDays": 7,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-01",
+      "unitCost": 80.8,
+      "scrap": 0
+    },
+    {
+      "id": "CP-01",
+      "name": "防护涂层",
+      "type": "BUY",
+      "uom": "KG",
+      "leadDays": 8,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-02",
+      "unitCost": 83.4,
+      "scrap": 0
+    },
+    {
+      "id": "SE-01",
+      "name": "密封胶",
+      "type": "BUY",
+      "uom": "KG",
+      "leadDays": 8,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-03",
+      "unitCost": 86.0,
+      "scrap": 0
+    },
+    {
+      "id": "TR-01",
+      "name": "热缩管",
+      "type": "BUY",
+      "uom": "M",
+      "leadDays": 5,
+      "moq": 1,
+      "lot": 1,
+      "supplier": "SUP-04",
+      "unitCost": 88.6,
+      "scrap": 0
+    },
+    {
+      "id": "CT-01",
+      "name": "电缆接头",
+      "type": "BUY",
+      "uom": "EA",
+      "leadDays": 7,
+      "moq": 20,
+      "lot": 10,
+      "supplier": "SUP-05",
+      "unitCost": 91.2,
+      "scrap": 0
+    }
+  ],
+  "bom": [
+    {
+      "parent": "EM-100",
+      "child": "ST-100",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "RT-100",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "BR-01",
+      "qty": 2,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "HS-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "EC-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "EC-02",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "FN-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "FC-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "TB-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "TM-01",
+      "qty": 6,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "GS-01",
+      "qty": 2,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "BL-01",
+      "qty": 12,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "WS-01",
+      "qty": 12,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "LB-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "PK-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "ST-100",
+      "child": "SC-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "ST-100",
+      "child": "CW-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "RT-100",
+      "child": "RC-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "RT-100",
+      "child": "SH-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "CW-01",
+      "child": "CU-01",
+      "qty": 3.2,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "SC-01",
+      "child": "SI-01",
+      "qty": 12.5,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "CW-01",
+      "child": "IN-01",
+      "qty": 6,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "CW-01",
+      "child": "IM-01",
+      "qty": 0.45,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "CW-01",
+      "child": "WG-01",
+      "qty": 2.5,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "RT-100",
+      "child": "SK-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "RC-01",
+      "child": "RB-01",
+      "qty": 1.8,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "RC-01",
+      "child": "RN-01",
+      "qty": 2,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "RT-100",
+      "child": "SP-01",
+      "qty": 2,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "RT-100",
+      "child": "GR-01",
+      "qty": 0.08,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "HS-01",
+      "child": "CP-01",
+      "qty": 0.25,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EC-01",
+      "child": "SE-01",
+      "qty": 0.06,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "ST-100",
+      "child": "TR-01",
+      "qty": 0.5,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "TB-01",
+      "child": "CT-01",
+      "qty": 1,
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01"
+    },
+    {
+      "parent": "EM-100",
+      "child": "BL-01",
+      "qty": 14,
+      "version": "BOM-EM100-V2",
+      "effective_from": "2026-12-15"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "SUP-01",
+      "name": "华东精密轴承",
+      "onTimeRate": 0.94,
+      "leadDays": 7
+    },
+    {
+      "id": "SUP-02",
+      "name": "苏南铸造工厂",
+      "onTimeRate": 0.89,
+      "leadDays": 12
+    },
+    {
+      "id": "SUP-03",
+      "name": "金陵电磁材料",
+      "onTimeRate": 0.91,
+      "leadDays": 14
+    },
+    {
+      "id": "SUP-04",
+      "name": "长三角机加工",
+      "onTimeRate": 0.96,
+      "leadDays": 8
+    },
+    {
+      "id": "SUP-05",
+      "name": "江海工业电气",
+      "onTimeRate": 0.93,
+      "leadDays": 6
+    },
+    {
+      "id": "SUP-06",
+      "name": "中原绝缘材料",
+      "onTimeRate": 0.87,
+      "leadDays": 10
+    },
+    {
+      "id": "SUP-07",
+      "name": "华北包装辅材",
+      "onTimeRate": 0.97,
+      "leadDays": 4
+    }
+  ],
+  "workcenters": [
+    {
+      "id": "WC-ST",
+      "name": "定子绕线及浸漆",
+      "cycleHours": 3.5
+    },
+    {
+      "id": "WC-RT",
+      "name": "转子加工与动平衡",
+      "cycleHours": 2.8
+    },
+    {
+      "id": "WC-AS",
+      "name": "总装",
+      "cycleHours": 2.1
+    },
+    {
+      "id": "WC-QA",
+      "name": "耐压与性能测试",
+      "cycleHours": 1.1
+    },
+    {
+      "id": "WC-PK",
+      "name": "包装入库",
+      "cycleHours": 0.5
+    }
+  ],
+  "scenarios": {
+    "normal": {
+      "name": "A · 正常生产",
+      "orders": [
+        {
+          "id": "SO-2601",
+          "product": "EM-100",
+          "qty": 40,
+          "finished": 20,
+          "due": "2026-12-20",
+          "priority": 1
+        },
+        {
+          "id": "SO-2602",
+          "product": "EM-100",
+          "qty": 25,
+          "finished": 10,
+          "due": "2026-12-28",
+          "priority": 2
+        }
+      ],
+      "stockMultiplier": 1.4,
+      "delayDays": 0,
+      "mappingBlocked": false,
+      "as_of": "2026-11-03",
+      "scheduledReceipts": {
+        "HS-01": [
+          {
+            "date": "2026-12-22",
+            "qty": 62,
+            "source": "PO-HS-2026-12"
+          }
+        ],
+        "BR-01": [
+          {
+            "date": "2026-12-23",
+            "qty": 84,
+            "source": "PO-BR-2026-12"
+          }
+        ]
+      }
+    },
+    "shortage": {
+      "name": "B · 关键物料短缺",
+      "orders": [
+        {
+          "id": "SO-2603",
+          "product": "EM-100",
+          "qty": 110,
+          "finished": 12,
+          "due": "2026-12-18",
+          "priority": 1
+        },
+        {
+          "id": "SO-2604",
+          "product": "EM-100",
+          "qty": 60,
+          "finished": 0,
+          "due": "2026-12-25",
+          "priority": 2
+        }
+      ],
+      "stockMultiplier": 0.15,
+      "delayDays": 0,
+      "mappingBlocked": false,
+      "as_of": "2026-11-03",
+      "scheduledReceipts": {
+        "HS-01": [
+          {
+            "date": "2026-12-22",
+            "qty": 6,
+            "source": "PO-HS-2026-12"
+          }
+        ],
+        "BR-01": [
+          {
+            "date": "2026-12-23",
+            "qty": 9,
+            "source": "PO-BR-2026-12"
+          }
+        ]
+      }
+    },
+    "delay": {
+      "name": "C · 生产延期",
+      "orders": [
+        {
+          "id": "SO-2605",
+          "product": "EM-100",
+          "qty": 80,
+          "finished": 18,
+          "due": "2026-11-25",
+          "priority": 1
+        },
+        {
+          "id": "SO-2606",
+          "product": "EM-100",
+          "qty": 40,
+          "finished": 5,
+          "due": "2026-12-05",
+          "priority": 2
+        }
+      ],
+      "stockMultiplier": 0.65,
+      "delayDays": 8,
+      "mappingBlocked": false,
+      "as_of": "2026-11-03",
+      "scheduledReceipts": {
+        "HS-01": [
+          {
+            "date": "2026-12-22",
+            "qty": 29,
+            "source": "PO-HS-2026-12"
+          }
+        ],
+        "BR-01": [
+          {
+            "date": "2026-12-23",
+            "qty": 39,
+            "source": "PO-BR-2026-12"
+          }
+        ]
+      }
+    },
+    "bom_change": {
+      "name": "D · BOM 映射异常",
+      "orders": [
+        {
+          "id": "SO-2607",
+          "product": "EM-100",
+          "qty": 75,
+          "finished": 0,
+          "due": "2026-12-12",
+          "priority": 1
+        },
+        {
+          "id": "SO-2608",
+          "product": "EM-100",
+          "qty": 30,
+          "finished": 0,
+          "due": "2026-12-19",
+          "priority": 2
+        }
+      ],
+      "stockMultiplier": 0.85,
+      "delayDays": 0,
+      "mappingBlocked": true,
+      "as_of": "2026-11-03",
+      "scheduledReceipts": {
+        "HS-01": [
+          {
+            "date": "2026-12-22",
+            "qty": 38,
+            "source": "PO-HS-2026-12"
+          }
+        ],
+        "BR-01": [
+          {
+            "date": "2026-12-23",
+            "qty": 51,
+            "source": "PO-BR-2026-12"
+          }
+        ]
+      }
+    }
+  },
+  "bom_versions": [
+    {
+      "version": "BOM-EM100-V1",
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-12-14",
+      "status": "RELEASED"
+    },
+    {
+      "version": "BOM-EM100-V2",
+      "effective_from": "2026-12-15",
+      "effective_to": null,
+      "status": "RELEASED"
+    }
+  ]
+}

@@ -181,3 +181,15 @@
 
 /* RC3.6 Frontend UX Consolidation — selected row actions, integrated mode control */
 .vbc-mode-switch{display:inline-flex;flex-wrap:wrap;gap:4px;padding:5px;background:#edf2f9;border:1px solid #d4dfed;border-radius:9px}.vbc-mode-switch .vbc-btn{border:0;border-radius:6px;min-height:36px;padding:8px 15px;font-weight:650;background:transparent;color:#405a7d}.vbc-mode-switch .vbc-btn.primary{background:#1e4caa;color:#fff;opacity:1;box-shadow:0 2px 7px #102c5b2b;cursor:default}.vbc-mode-switch .vbc-btn:disabled{opacity:1}.vbc-material-tabs{gap:9px}.vbc-material-tabs .vbc-btn{min-height:34px}.vbc-material-tabs .vbc-btn:disabled{opacity:.52;cursor:not-allowed}.vbc-linked-panel{margin:12px 0;padding:15px;border:1px solid #c7d8ef;border-radius:8px;background:#f7faff}.vbc-linked-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.vbc-table-wrap{max-width:100%;overflow-x:auto}.vbc-table td,.vbc-table th{white-space:nowrap}.vbc-selectable:hover{background:#eef4fd}.vbc-selectable:focus-visible{outline:2px solid #2563eb}@media(max-width:650px){.vbc-mode-switch{display:flex;width:100%}.vbc-mode-switch .vbc-btn{flex:1;white-space:normal}.vbc-material-tabs .vbc-flex-spacer{display:none}.vbc-material-tabs .vbc-more{margin-left:auto}}
+
+/* RC3.6 UX closure: keep actions contextual and order audit tables inside their own scroll area. */
+.vbc-material-tabs .vbc-row-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;width:100%;padding-top:7px;border-top:1px solid #e6edf5}
+.vbc-material-tabs .vbc-more{margin-left:auto}
+.vbc-order-table-scroll{display:block;max-width:100%;width:100%;overflow-x:auto;overscroll-behavior-x:contain;border:1px solid #e0e8f2;border-radius:7px;margin-top:12px}
+.vbc-order-table-scroll .vbc-table{min-width:700px;width:100%;margin:0;table-layout:auto}
+.vbc-order-table-scroll th,.vbc-order-table-scroll td{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;padding:11px 14px}
+.vbc-order-table-scroll th:first-child,.vbc-order-table-scroll td:first-child{text-align:left;position:sticky;left:0;background:#fff;z-index:1}
+.vbc-order-table-scroll th:first-child{background:#f2f6fb;z-index:2}
+.vbc-business-card.rc35-highlight{outline:0;outline-offset:0;box-shadow:none;border-color:#c7d8ed}
+.vbc-audit-center,.vbc-business-card{min-width:0;max-width:100%;box-sizing:border-box}
+@media(max-width:650px){.vbc-material-tabs .vbc-row-actions{width:100%}.vbc-material-tabs .vbc-row-actions .vbc-btn{flex:1;white-space:normal}.vbc-order-table-scroll .vbc-table{min-width:700px}}

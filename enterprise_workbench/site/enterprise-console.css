@@ -217,3 +217,39 @@
 #vbConsole .vbc-btn.tiny{min-height:31px;padding:6px 10px}
 #vbConsole .vbc-order-table-scroll{max-width:100%;overflow-x:auto}
 @media(max-width:760px){.heading{align-items:flex-start}.rc35-home-entry{padding:13px}.vbc-material-toolbar{align-items:stretch}.vbc-global-actions{width:100%;margin-left:0}.vbc-global-actions button{flex:1}.topright{flex-wrap:wrap}.tablewrap{max-width:calc(100vw - 32px)}}
+
+/* RC3.6 enterprise audit/reconciliation visual closure — scoped, no API changes */
+#vbConsole .vbc-business-results{align-items:stretch;gap:18px}
+#vbConsole .vbc-business-results > .vbc-business-card,
+#vbConsole .vbc-business-results > .vbc-audit-center{margin:0;min-width:0;padding:20px 22px;border:1px solid #e1e8f0;border-radius:12px;background:#fff;box-shadow:0 2px 10px #16324b08}
+#vbConsole .vbc-business-card-head,#vbConsole .vbc-audit-panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;min-width:0;margin:0 0 16px}
+#vbConsole .vbc-business-card-head h2,#vbConsole .vbc-audit-panel-head h2{margin:0;color:#163c59;font-size:16px;line-height:1.45;font-weight:650;letter-spacing:0}
+#vbConsole .vbc-business-card-body{min-width:0}
+#vbConsole .vbc-audit-panel-head>div{flex:1;min-width:0}
+#vbConsole .vbc-audit-panel-head p{margin:6px 0 0;color:#6b7e93;font-size:12px;line-height:1.65}
+#vbConsole .vbc-audit-panel-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+#vbConsole .vbc-audit-panel-actions .vbc-btn{min-height:36px;padding:7px 13px;white-space:nowrap}
+#vbConsole .vbc-audit-querybar{display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(145px,1fr) auto;align-items:end;gap:12px;margin:0 0 16px}
+#vbConsole .vbc-audit-querybar label{min-width:0;display:grid;gap:6px;margin:0;color:#536b84;font-size:12px;line-height:1.4}
+#vbConsole .vbc-audit-querybar input,#vbConsole .vbc-audit-querybar select{width:100%;height:36px;min-width:0;border-radius:7px;font-size:13px}
+#vbConsole .vbc-audit-querybar .vbc-btn{min-height:36px;white-space:nowrap}
+#vbConsole .vbc-audit-state{flex-shrink:0;padding:5px 9px;border-radius:6px;background:#f1f5f9;color:#526b82;font-size:11px;font-weight:550}
+#vbConsole .vbc-audit-result{min-width:0;margin-top:12px}
+#vbConsole .vbc-audit-result-head{font-size:12px;color:#61748c;margin-bottom:10px}
+#vbConsole .vbc-audit-panel .vbc-empty,#vbConsole .vbc-business-card-body>.vbc-empty{padding:17px 16px;min-height:0;border:1px solid #e6edf5;border-radius:9px;background:#f8fafc;line-height:1.6;font-size:12px}
+#vbConsole .vbc-audit-panel .vbc-empty strong,#vbConsole .vbc-business-card-body>.vbc-empty strong{font-size:13px;margin-bottom:3px}
+#vbConsole .vbc-business-timeline{margin:0;padding-left:20px}
+#vbConsole .vbc-business-timeline li{padding:0 0 13px 13px;line-height:1.5}
+#vbConsole .vbc-business-timeline li strong{display:block;font-size:13px;line-height:1.45}
+#vbConsole .vbc-business-timeline li span,#vbConsole .vbc-business-timeline li small{font-size:12px;line-height:1.6;font-variant-numeric:tabular-nums}
+#vbConsole .vbc-reconcile-result{display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;padding:11px 13px;border-radius:8px;font-size:12px;line-height:1.5;background:#f1f5f9;color:#3d5672}
+#vbConsole .vbc-reconcile-result strong{font-size:13px;color:#1f4b6b}
+#vbConsole .vbc-reconcile-result.is-attention{background:#fff7ed;color:#92400e}
+#vbConsole .vbc-reconcile-result.is-attention strong{color:#9a3412}
+#vbConsole .vbc-audit-result>.vbc-low{font-size:11px;line-height:1.6;margin:12px 0 8px;color:#72839a}
+#vbConsole .vbc-audit-hint{padding:14px 15px;border-radius:8px;background:#f8fafc;color:#708198;font-size:12px}
+#vbConsole .vbc-order-table-scroll{margin-top:10px;border-radius:8px}
+#vbConsole .vbc-order-table-scroll th,#vbConsole .vbc-order-table-scroll td{font-size:12px;padding:10px 12px}
+#vbConsole .vbc-business-card .vbc-detail-list{font-size:13px}
+@media(max-width:850px){#vbConsole .vbc-audit-panel-head{flex-wrap:wrap}#vbConsole .vbc-audit-querybar{grid-template-columns:repeat(2,minmax(0,1fr))}#vbConsole .vbc-audit-querybar>.vbc-btn{grid-column:1/-1;justify-self:start}}
+@media(max-width:600px){#vbConsole .vbc-business-results>.vbc-business-card,#vbConsole .vbc-business-results>.vbc-audit-center{padding:16px}#vbConsole .vbc-audit-querybar{grid-template-columns:minmax(0,1fr)}#vbConsole .vbc-audit-querybar>.vbc-btn{grid-column:auto}#vbConsole .vbc-audit-panel-actions{width:100%}#vbConsole .vbc-audit-panel-actions .vbc-btn{width:100%}}

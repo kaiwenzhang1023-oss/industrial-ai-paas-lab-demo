@@ -1,0 +1,5 @@
+# Isolated RC3.6 PG16 integration gate dependencies (Python 3.14.x)
+pytest>=9,<10
+fastapi>=0.110,<1
+httpx>=0.27,<1
+psycopg[binary]>=3.2,<4

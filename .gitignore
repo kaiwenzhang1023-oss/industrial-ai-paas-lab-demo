@@ -1,0 +1,10 @@
+﻿.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.pyc
+__pycache__/
+.rc36-pg16-venv-py314/
+RC36_PG16_EVIDENCE.zip

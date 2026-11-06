@@ -1,0 +1,10 @@
+{
+  "baseline_zip": "Industrial_AI_PaaS_Lab_V19B_RC34_Stage2_Local_PASS_Cloud_HOLD_Full_Source(1).zip",
+  "baseline_zip_sha256": "00e03d5e284a4224979b9bf08f6d66d0068e988fc40d20906790e13127ec57b8",
+  "baseline_files": 80,
+  "modified_original_files": [
+    "enterprise_workbench/site/enterprise-console.js"
+  ],
+  "original_files_missing": [],
+  "frozen_version_a_and_rc2": "not included; not modified"
+}

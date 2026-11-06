@@ -1,0 +1,19 @@
+{
+  "version": "RC3.3",
+  "base": "RC3.2 full source candidate",
+  "deployment": "NOT_DEPLOYED",
+  "files": {
+    "enterprise_workbench/site/index.html": {
+      "bytes": 4962,
+      "sha256": "5a71e284927d5083e7999c28ad97887d788544777f77fd0403873ef6724c53f8"
+    },
+    "enterprise_workbench/site/enterprise-console.js": {
+      "bytes": 43181,
+      "sha256": "6808949407a40b9457275503c57c4c913fdd658382c3b90d3f1d69aa7f82fbbe"
+    },
+    "enterprise_workbench/site/enterprise-console.css": {
+      "bytes": 15711,
+      "sha256": "9c31a9d732a6371f922f5adcebbc15585663266b1b3fac5a27be7f2e158f980e"
+    }
+  }
+}

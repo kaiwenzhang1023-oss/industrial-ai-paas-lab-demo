@@ -1,0 +1,74 @@
+{
+  "gate": "RC36_OFFLINE_SEED_REPLAY",
+  "status": "PASS_OFFLINE_ONLY",
+  "database_connected": false,
+  "pg16_business_gate_pass": false,
+  "source_snapshot": "release_evidence/rc36/PG16_BRANCH_SEED_SNAPSHOT.json",
+  "scenarios": [
+    {
+      "scenario": "A",
+      "line_count": 21,
+      "peg_count": 16,
+      "snapshot_plan_recompute": "MATCH",
+      "supply_source_caps": "MATCH",
+      "native_a_b_numeric": "MATCH",
+      "native_a_b_order_level_pegging": "MATCH",
+      "a_input_hash_equals_b_input_hash": true,
+      "difference_counts": {
+        "plan": 0,
+        "supply_caps": 0,
+        "numeric": 0,
+        "pegging": 0
+      }
+    },
+    {
+      "scenario": "B",
+      "line_count": 21,
+      "peg_count": 16,
+      "snapshot_plan_recompute": "MATCH",
+      "supply_source_caps": "MATCH",
+      "native_a_b_numeric": "MATCH",
+      "native_a_b_order_level_pegging": "MATCH",
+      "a_input_hash_equals_b_input_hash": true,
+      "difference_counts": {
+        "plan": 0,
+        "supply_caps": 0,
+        "numeric": 0,
+        "pegging": 0
+      }
+    },
+    {
+      "scenario": "C",
+      "line_count": 21,
+      "peg_count": 16,
+      "snapshot_plan_recompute": "MATCH",
+      "supply_source_caps": "MATCH",
+      "native_a_b_numeric": "MATCH",
+      "native_a_b_order_level_pegging": "MATCH",
+      "a_input_hash_equals_b_input_hash": true,
+      "difference_counts": {
+        "plan": 0,
+        "supply_caps": 0,
+        "numeric": 0,
+        "pegging": 0
+      }
+    },
+    {
+      "scenario": "D",
+      "line_count": 21,
+      "peg_count": 16,
+      "snapshot_plan_recompute": "MATCH",
+      "supply_source_caps": "MATCH",
+      "native_a_b_numeric": "MATCH",
+      "native_a_b_order_level_pegging": "MATCH",
+      "a_input_hash_equals_b_input_hash": true,
+      "difference_counts": {
+        "plan": 0,
+        "supply_caps": 0,
+        "numeric": 0,
+        "pegging": 0
+      }
+    }
+  ],
+  "note": "Offline algorithm replay from a SELECT-captured Neon child-branch seed snapshot. It does not create or read PG16 MRP runs and cannot replace the live PG16 business gate."
+}

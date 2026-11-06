@@ -1,0 +1,62 @@
+{
+  "G01": {
+    "scenario": "B",
+    "run_id": "MRP-064fc8f08b1d47dd",
+    "input_hash": "193d91cc70c9358fcdf9d8a963170bb7151fe717afb2124cbf9f6275af96d59d",
+    "order_count": 2,
+    "requirement_lines": 21,
+    "pegging_lines": 16,
+    "gross_requirement": "790.0000",
+    "pegged_requirement": "790.0000",
+    "pegging_supply_allocation": {
+      "from_stock": "255.0000",
+      "from_receipts": "55.0000",
+      "from_planned": "480.0000"
+    },
+    "quantity_conserved": true,
+    "total_net_replenishment": "480.0000",
+    "total_planned_replenishment": "485.0000",
+    "scope": "PG16_PERSISTED_SIMULATED_SCENARIO",
+    "physical_factory_execution": "NOT_CLAIMED"
+  },
+  "G02": {
+    "scenario": "C",
+    "run_id": "MRP-00dc10e69b1f465c",
+    "input_hash": "eba3e1eff88ee1a99050ff255faa2d03573c84e0b4f4af0e34221ca4c2433820",
+    "order_count": 2,
+    "requirement_lines": 21,
+    "pegging_lines": 16,
+    "gross_requirement": "790.0000",
+    "pegged_requirement": "790.0000",
+    "pegging_supply_allocation": {
+      "from_stock": "495.0000",
+      "from_receipts": "75.0000",
+      "from_planned": "220.0000"
+    },
+    "quantity_conserved": true,
+    "total_net_replenishment": "215.0000",
+    "total_planned_replenishment": "225.0000",
+    "scope": "PG16_PERSISTED_SIMULATED_SCENARIO",
+    "physical_factory_execution": "NOT_CLAIMED"
+  },
+  "G03": {
+    "scenario": "D",
+    "run_id": "MRP-d495a0e4323d451d",
+    "input_hash": "24921a3e4b8d570e6aaa29b8d520bd56751e2a7256f802fdff6e90b054b6b3aa",
+    "order_count": 2,
+    "requirement_lines": 21,
+    "pegging_lines": 16,
+    "gross_requirement": "1150.0000",
+    "pegged_requirement": "1150.0000",
+    "pegging_supply_allocation": {
+      "from_stock": "495.0000",
+      "from_receipts": "55.0000",
+      "from_planned": "600.0000"
+    },
+    "quantity_conserved": true,
+    "total_net_replenishment": "600.0000",
+    "total_planned_replenishment": "605.0000",
+    "scope": "PG16_PERSISTED_SIMULATED_SCENARIO",
+    "physical_factory_execution": "NOT_CLAIMED"
+  }
+}

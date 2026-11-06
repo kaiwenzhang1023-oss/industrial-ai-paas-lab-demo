@@ -1,0 +1,9 @@
+{
+  "gate": "PG16",
+  "status": "HOLD",
+  "scope": "RC36_ISOLATED_READ_ONLY",
+  "checks": {
+    "dsn": "HOLD_MISSING"
+  },
+  "secrets_logged": false
+}

@@ -1,0 +1,41 @@
+{
+  "candidate": "Version B Enterprise Console UX RC3",
+  "created_on": "2026-11-04",
+  "baseline_branch": "v19-version-b-preview",
+  "baseline_commit": "ea20d05f24f9d641442339dcff3d1b48e063d091",
+  "baseline_source": "Local RC2 full source ZIP; enterprise-status.js and app.js git blob SHA match previously retrieved frozen GitHub branch",
+  "modified_files": [
+    "enterprise_workbench/site/index.html"
+  ],
+  "added_files": [
+    "evidence/RC3_BROWSER_MOCK_CALLS.json",
+    "evidence/RC3_03_approval_before.png",
+    "evidence/RC3_04_execution_pending.png",
+    "evidence/RC3_08_mobile.png",
+    "evidence/RC3_06_receipt.png",
+    "evidence/RC3_07_audit.png",
+    "evidence/RC3_01_enterprise_before.png",
+    "evidence/RC3_02_mrp_details.png",
+    "evidence/RC3_05_execution_done.png",
+    "tests/browser_enterprise_rc3.py",
+    "enterprise_workbench/site/enterprise-console.js",
+    "enterprise_workbench/site/enterprise-console.css"
+  ],
+  "frontend_browser_mock": {
+    "result": "PASS",
+    "checks_passed": 13,
+    "checks_total": 13,
+    "http_source": "deterministic mocked requests, not cloud"
+  },
+  "backend_rc2_tests": {
+    "result": "PASS",
+    "passed": 14,
+    "command": "python -m pytest tests/test_preview_rc2.py -q"
+  },
+  "live_neon_pg16": "NOT_EXECUTED",
+  "live_render_deploy": "NOT_EXECUTED",
+  "github_branch_creation": "HOLD_PERMISSION_403_AND_LOCAL_NO_DOTGIT",
+  "frozen_a_untouched": true,
+  "frozen_b_live_untouched": true,
+  "no_external_erp_mes_srm_writes": true
+}

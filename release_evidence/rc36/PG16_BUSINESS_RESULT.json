@@ -1,0 +1,47 @@
+{
+  "scope": "RC36_ISOLATED_NEON_PG16_BRANCH_ONLY",
+  "target": {
+    "project_id": "super-glade-55757112",
+    "branch_id": "br-green-glade-bbnahfli",
+    "branch_name": "rc36-pg16-isolated-20261106",
+    "endpoint_id": "ep-holy-star-bbv8lyg7",
+    "database": "industrial_v19b_preview"
+  },
+  "privacy": "connection strings and identity tokens are never written to evidence",
+  "frozen_rc2_touched": false,
+  "rc35_branch_touched": false,
+  "external_effect": "NONE",
+  "schema_changes": false,
+  "migrations_executed": false,
+  "source_erp_wms_mutations": false,
+  "native_database_rls_claimed": false,
+  "scope_notes": [
+    "This RC36 branch is a child of the existing RC35 isolated PG16 branch; all writes remain branch-local.",
+    "No migrations are executed by this gate; read-only preflight requires the inherited RC2/RC3/RC35 schema structure.",
+    "Tenant authorization is tested at the API layer; this does not claim native PostgreSQL RLS.",
+    "Worker fault injection is an application-level one-job failure plus lease recovery, not a Neon node outage.",
+    "Worker receipts prove INTERNAL_VALIDATION_ONLY, not external factory-system command delivery.",
+    "Scenario C is a seven-day customer due-date postponement; D is a BOM usage anomaly."
+  ],
+  "checks": {
+    "source_manifest_integrity": {
+      "status": "PASS",
+      "detail": {
+        "manifest_file_count": 186,
+        "missing": [],
+        "mismatched": [],
+        "unsafe_paths": []
+      }
+    },
+    "isolated_pg16_connection": {
+      "status": "HOLD",
+      "detail": "Secure Neon connection input was not supplied."
+    }
+  },
+  "run_ids": [],
+  "command_ids": [],
+  "a_b_findings": [],
+  "status": "HOLD",
+  "timestamp_utc": "2026-11-06T01:52:44.609215+00:00",
+  "source_manifest_sha256": "2112dff0e1d04bf82b39dd09578d5cf58d919058cca126790b5023701965a174"
+}

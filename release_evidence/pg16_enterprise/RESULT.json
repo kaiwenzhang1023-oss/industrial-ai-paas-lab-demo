@@ -1,0 +1,756 @@
+{
+  "scope": "ISOLATED_NEON_PG16_CANDIDATE_ONLY",
+  "privacy": "connection strings and identity tokens are never written to evidence",
+  "frozen_rc2_touched": false,
+  "external_effect": "NONE",
+  "schema_changes": false,
+  "source_erp_wms_mutations": false,
+  "native_database_rls_claimed": false,
+  "scope_notes": [
+    "Tenant authorization is tested at the API layer; this does not claim native PostgreSQL RLS.",
+    "Worker fault injection is an application-level one-job failure plus lease recovery, not a Neon node outage.",
+    "Worker receipts prove INTERNAL_VALIDATION_ONLY, not external factory-system command delivery.",
+    "Scenario C is a seven-day customer due-date postponement; D is a BOM usage anomaly."
+  ],
+  "checks": {
+    "isolated_pg16_guard": {
+      "status": "PASS",
+      "detail": {
+        "database": "industrial_v19b_preview",
+        "endpoint_label": "rc35-final-gate-isolated-20261105"
+      }
+    },
+    "pg16_and_schema": {
+      "status": "PASS",
+      "detail": {
+        "pg_version_num": "160015",
+        "database": "industrial_v19b_preview",
+        "workflow_table": true
+      }
+    },
+    "required_pg16_tables": {
+      "status": "PASS",
+      "detail": {
+        "missing": []
+      }
+    },
+    "seeded_source_data_available": {
+      "status": "PASS",
+      "detail": {
+        "empty_source_tables": []
+      }
+    },
+    "unauthenticated_401": {
+      "status": "PASS"
+    },
+    "invalid_token_401": {
+      "status": "PASS"
+    },
+    "mrp_create_A_1": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "run_id_shape_1": {
+      "status": "PASS"
+    },
+    "tenant_A_run_read": {
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "expected": 200
+      }
+    },
+    "pg16_source_and_snapshot": {
+      "status": "PASS"
+    },
+    "role_read_run_viewer": {
+      "status": "PASS"
+    },
+    "role_read_workflow_viewer": {
+      "status": "PASS"
+    },
+    "role_read_overview_viewer": {
+      "status": "PASS"
+    },
+    "role_read_run_planner": {
+      "status": "PASS"
+    },
+    "role_read_workflow_planner": {
+      "status": "PASS"
+    },
+    "role_read_overview_planner": {
+      "status": "PASS"
+    },
+    "role_read_run_approver": {
+      "status": "PASS"
+    },
+    "role_read_workflow_approver": {
+      "status": "PASS"
+    },
+    "role_read_overview_approver": {
+      "status": "PASS"
+    },
+    "role_read_run_operator": {
+      "status": "PASS"
+    },
+    "role_read_workflow_operator": {
+      "status": "PASS"
+    },
+    "role_read_overview_operator": {
+      "status": "PASS"
+    },
+    "role_read_run_admin": {
+      "status": "PASS"
+    },
+    "role_read_workflow_admin": {
+      "status": "PASS"
+    },
+    "role_read_overview_admin": {
+      "status": "PASS"
+    },
+    "role_viewer_mrp_create_403": {
+      "status": "PASS"
+    },
+    "role_approver_mrp_create_403": {
+      "status": "PASS"
+    },
+    "role_operator_mrp_create_403": {
+      "status": "PASS"
+    },
+    "role_viewer_decision_403": {
+      "status": "PASS"
+    },
+    "role_planner_decision_403": {
+      "status": "PASS"
+    },
+    "role_operator_decision_403": {
+      "status": "PASS"
+    },
+    "role_viewer_worker_403": {
+      "status": "PASS"
+    },
+    "role_planner_worker_403": {
+      "status": "PASS"
+    },
+    "role_approver_worker_403": {
+      "status": "PASS"
+    },
+    "role_viewer_whatif_403": {
+      "status": "PASS"
+    },
+    "role_approver_whatif_403": {
+      "status": "PASS"
+    },
+    "role_operator_whatif_403": {
+      "status": "PASS"
+    },
+    "role_viewer_dynamic_reconcile_403": {
+      "status": "PASS"
+    },
+    "role_operator_dynamic_reconcile_403": {
+      "status": "PASS"
+    },
+    "cross_tenant_viewer_run_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_viewer_workflow_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_viewer_overview_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_planner_run_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_planner_workflow_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_planner_overview_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_approver_run_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_approver_workflow_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_approver_overview_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_operator_run_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_operator_workflow_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_operator_overview_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_admin_run_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_admin_workflow_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_admin_overview_404": {
+      "status": "PASS"
+    },
+    "cross_tenant_whatif_404": {
+      "status": "PASS"
+    },
+    "whatif_stock_http": {
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "expected": 200
+      }
+    },
+    "whatif_stock_no_external_effect": {
+      "status": "PASS"
+    },
+    "whatif_stock_detached_snapshot": {
+      "status": "PASS"
+    },
+    "whatif_stock_pg16_unchanged": {
+      "status": "PASS",
+      "detail": {
+        "tables_compared": 13
+      }
+    },
+    "whatif_receipt_http": {
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "expected": 200
+      }
+    },
+    "whatif_receipt_no_external_effect": {
+      "status": "PASS"
+    },
+    "whatif_receipt_detached_snapshot": {
+      "status": "PASS"
+    },
+    "whatif_receipt_pg16_unchanged": {
+      "status": "PASS",
+      "detail": {
+        "tables_compared": 13
+      }
+    },
+    "whatif_due_http": {
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "expected": 200
+      }
+    },
+    "whatif_due_no_external_effect": {
+      "status": "PASS"
+    },
+    "whatif_due_detached_snapshot": {
+      "status": "PASS"
+    },
+    "whatif_due_pg16_unchanged": {
+      "status": "PASS",
+      "detail": {
+        "tables_compared": 13
+      }
+    },
+    "whatif_unknown_material_422": {
+      "status": "PASS"
+    },
+    "mrp_create_B_2": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "run_id_shape_2": {
+      "status": "PASS"
+    },
+    "mrp_create_C_3": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "run_id_shape_3": {
+      "status": "PASS"
+    },
+    "mrp_create_D_4": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "run_id_shape_4": {
+      "status": "PASS"
+    },
+    "golden_G01_pg16_quantity_conservation": {
+      "status": "PASS",
+      "detail": {
+        "gross": "790.0000",
+        "pegged": "790.0000"
+      }
+    },
+    "golden_G02_pg16_quantity_conservation": {
+      "status": "PASS",
+      "detail": {
+        "gross": "790.0000",
+        "pegged": "790.0000"
+      }
+    },
+    "golden_G03_pg16_quantity_conservation": {
+      "status": "PASS",
+      "detail": {
+        "gross": "1150.0000",
+        "pegged": "1150.0000"
+      }
+    },
+    "a_b_dynamic_A_http": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "a_b_same_snapshot_and_explained_A": {
+      "status": "PASS",
+      "detail": {
+        "status": "MATCH",
+        "difference_count": 0,
+        "same_input_hash": true
+      }
+    },
+    "a_b_replay_A": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "a_b_idempotent_replay_A": {
+      "status": "PASS"
+    },
+    "a_b_dynamic_B_http": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "a_b_same_snapshot_and_explained_B": {
+      "status": "PASS",
+      "detail": {
+        "status": "MATCH",
+        "difference_count": 0,
+        "same_input_hash": true
+      }
+    },
+    "a_b_replay_B": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "a_b_idempotent_replay_B": {
+      "status": "PASS"
+    },
+    "a_b_dynamic_C_http": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "a_b_same_snapshot_and_explained_C": {
+      "status": "PASS",
+      "detail": {
+        "status": "MATCH",
+        "difference_count": 0,
+        "same_input_hash": true
+      }
+    },
+    "a_b_replay_C": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "a_b_idempotent_replay_C": {
+      "status": "PASS"
+    },
+    "a_b_dynamic_D_http": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "a_b_same_snapshot_and_explained_D": {
+      "status": "PASS",
+      "detail": {
+        "status": "MATCH",
+        "difference_count": 0,
+        "same_input_hash": true
+      }
+    },
+    "a_b_replay_D": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "a_b_idempotent_replay_D": {
+      "status": "PASS"
+    },
+    "a_b_exact_result_parity": {
+      "status": "PASS",
+      "detail": "All A/B/C/D scenario outputs matched within engine tolerance."
+    },
+    "approver_dynamic_reconciliation_allowed": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "approver_dynamic_same_snapshot": {
+      "status": "PASS"
+    },
+    "concurrent_decision_http_202": {
+      "status": "PASS",
+      "detail": {
+        "codes": [
+          202,
+          202
+        ]
+      }
+    },
+    "concurrent_decision_single_command": {
+      "status": "PASS"
+    },
+    "concurrent_decision_replay_observed": {
+      "status": "PASS"
+    },
+    "same_key_different_payload_409": {
+      "status": "PASS"
+    },
+    "new_key_after_terminal_decision_409": {
+      "status": "PASS"
+    },
+    "cross_tenant_command_404": {
+      "status": "PASS"
+    },
+    "pg16_one_decision_one_outbox_one_approval_audit": {
+      "status": "PASS",
+      "detail": {
+        "decisions": 1,
+        "outbox": 1,
+        "approval_audit": 1
+      }
+    },
+    "worker_fault_injected": {
+      "status": "PASS"
+    },
+    "worker_retry_no_premature_receipt": {
+      "status": "PASS",
+      "detail": {
+        "status": "RETRY",
+        "attempts": 1,
+        "receipts": 0
+      }
+    },
+    "worker_retry_recovered": {
+      "status": "PASS"
+    },
+    "worker_retry_final_pg16_evidence": {
+      "status": "PASS",
+      "detail": {
+        "status": "DONE",
+        "attempts": 2,
+        "receipts": 1,
+        "workflow": "EXECUTED_INTERNAL"
+      }
+    },
+    "worker_receipt_internal_only": {
+      "status": "PASS"
+    },
+    "worker_retry_and_success_audited": {
+      "status": "PASS"
+    },
+    "worker_duplicate_dispatch_no_reexecution": {
+      "status": "PASS"
+    },
+    "mrp_create_A_5": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "run_id_shape_5": {
+      "status": "PASS"
+    },
+    "mrp_create_A_6": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "run_id_shape_6": {
+      "status": "PASS"
+    },
+    "parallel_approve_MRP-b476e7c5263744fc": {
+      "status": "PASS",
+      "detail": {
+        "http": 202,
+        "expected": 202
+      }
+    },
+    "parallel_approve_MRP-b9782061620443e3": {
+      "status": "PASS",
+      "detail": {
+        "http": 202,
+        "expected": 202
+      }
+    },
+    "pg16_skip_locked_two_distinct_jobs": {
+      "status": "PASS",
+      "detail": {
+        "processed_count": 2,
+        "unique_command_count": 2
+      }
+    },
+    "pg16_parallel_one_receipt_each": {
+      "status": "PASS"
+    },
+    "mrp_create_A_7": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "run_id_shape_7": {
+      "status": "PASS"
+    },
+    "lease_test_approval": {
+      "status": "PASS",
+      "detail": {
+        "http": 202,
+        "expected": 202
+      }
+    },
+    "worker_lease_initial_claim": {
+      "status": "PASS"
+    },
+    "worker_expired_lease_reclaimed": {
+      "status": "PASS"
+    },
+    "worker_stale_owner_ack_rejected": {
+      "status": "PASS"
+    },
+    "worker_lease_recovery_finished": {
+      "status": "PASS"
+    },
+    "worker_lease_final_exactly_once": {
+      "status": "PASS",
+      "detail": {
+        "status": "DONE",
+        "attempts": 2,
+        "receipts": 1
+      }
+    },
+    "mrp_create_A_8": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "run_id_shape_8": {
+      "status": "PASS"
+    },
+    "admin_read_own_run": {
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "expected": 200
+      }
+    },
+    "admin_whatif_allowed": {
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "expected": 200
+      }
+    },
+    "admin_dynamic_allowed": {
+      "status": "PASS",
+      "detail": {
+        "http": 201,
+        "expected": 201
+      }
+    },
+    "admin_dynamic_same_snapshot": {
+      "status": "PASS"
+    },
+    "admin_decision_allowed": {
+      "status": "PASS",
+      "detail": {
+        "http": 202,
+        "expected": 202
+      }
+    },
+    "admin_worker_dispatch_allowed": {
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "expected": 200
+      }
+    },
+    "admin_worker_dispatch_completed": {
+      "status": "PASS"
+    },
+    "operator_worker_dispatch_allowed": {
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "expected": 200
+      }
+    },
+    "operator_no_duplicate_pending_job": {
+      "status": "PASS"
+    },
+    "pg16_statement_timeout_cancelled": {
+      "status": "PASS"
+    },
+    "pg16_connection_recovered_after_timeout": {
+      "status": "PASS"
+    },
+    "mock_erp_wms_source_unchanged": {
+      "status": "PASS"
+    }
+  },
+  "run_ids": [
+    "MRP-c59e65862fd84dcf",
+    "MRP-064fc8f08b1d47dd",
+    "MRP-00dc10e69b1f465c",
+    "MRP-d495a0e4323d451d",
+    "MRP-b476e7c5263744fc",
+    "MRP-b9782061620443e3",
+    "MRP-876e21d10a8b4dea",
+    "MRP-d07021f97f294e2b"
+  ],
+  "command_ids": [
+    "a2e25f82-46ac-42fd-b29e-c75d372bd6db",
+    "79b2febb-9db6-411a-a583-24f9a2f016db",
+    "f16d035d-fef5-438e-9be3-fc820e7db290",
+    "75c14dfb-4c27-4d57-9fce-b81f0274f05e",
+    "4abd50e6-49e2-4276-84eb-ef46812f3577"
+  ],
+  "a_b_findings": [
+    {
+      "scenario": "A",
+      "run_id": "MRP-c59e65862fd84dcf",
+      "status": "MATCH",
+      "difference_count": 0,
+      "a_input_hash": "8caafb7c8adbf90f3a8c0a5db7e0fdb7e7901b24a68fc6e3ea21030de3beec54",
+      "b_input_hash": "8caafb7c8adbf90f3a8c0a5db7e0fdb7e7901b24a68fc6e3ea21030de3beec54",
+      "differences": []
+    },
+    {
+      "scenario": "B",
+      "run_id": "MRP-064fc8f08b1d47dd",
+      "status": "MATCH",
+      "difference_count": 0,
+      "a_input_hash": "764d82bc2563e57af30b02f6618f988445a2c84a4048efeac2b85e7cda97a00d",
+      "b_input_hash": "764d82bc2563e57af30b02f6618f988445a2c84a4048efeac2b85e7cda97a00d",
+      "differences": []
+    },
+    {
+      "scenario": "C",
+      "run_id": "MRP-00dc10e69b1f465c",
+      "status": "MATCH",
+      "difference_count": 0,
+      "a_input_hash": "0f421cc675ff183c9b1854048aa21224945e29ca938a302e10a9bfe3d7749d22",
+      "b_input_hash": "0f421cc675ff183c9b1854048aa21224945e29ca938a302e10a9bfe3d7749d22",
+      "differences": []
+    },
+    {
+      "scenario": "D",
+      "run_id": "MRP-d495a0e4323d451d",
+      "status": "MATCH",
+      "difference_count": 0,
+      "a_input_hash": "e7f5c2e6164f1212af8a719c02447d1c0e21d6ab094250d3dd34ce5c795c8870",
+      "b_input_hash": "e7f5c2e6164f1212af8a719c02447d1c0e21d6ab094250d3dd34ce5c795c8870",
+      "differences": []
+    }
+  ],
+  "status": "PASS",
+  "timestamp_utc": "2026-11-05T12:32:48.777518+00:00",
+  "source_manifest_sha256": "2bdd2d8f7a5c58ff62cfb63e4583cf2f93e490ed68d3ec079e15a30069444d7a",
+  "source_tables_before": {
+    "mock_erp.sales_orders": {
+      "count": 2,
+      "sha256": "c90b2e7ddfadf11c6d355969dff7db25587996ab5a8aab8b906c542536ee45d2"
+    },
+    "mock_erp.materials": {
+      "count": 9,
+      "sha256": "f204434366b306f4523706f5ef9189e08186b38161d3cb4fb7a2082c69a21db9"
+    },
+    "mock_erp.bom_versions": {
+      "count": 1,
+      "sha256": "907d5028a2a94ab708b1b5af8a243acdf210d5db8faacf3a3be6d6f458dd7dc0"
+    },
+    "mock_erp.bom_items": {
+      "count": 8,
+      "sha256": "52d5c81bbf7fbefb07904b901b2d5df4daa244f959b92d8a958141d4a249e206"
+    },
+    "mock_erp.supply_orders": {
+      "count": 5,
+      "sha256": "36147b89affbcb8d3e1f0d3cf9effc169d8636e19e4eecc183ef363843bb7610"
+    },
+    "mock_wms.inventory_balances": {
+      "count": 9,
+      "sha256": "47237f63f72243ab95cea8754becd8166a393683b2603beb1b585a71b0f94b55"
+    }
+  },
+  "golden_scenario_evidence": "RC35_GOLDEN_SCENARIOS_PG16.json",
+  "source_tables_after": {
+    "mock_erp.sales_orders": {
+      "count": 2,
+      "sha256": "c90b2e7ddfadf11c6d355969dff7db25587996ab5a8aab8b906c542536ee45d2"
+    },
+    "mock_erp.materials": {
+      "count": 9,
+      "sha256": "f204434366b306f4523706f5ef9189e08186b38161d3cb4fb7a2082c69a21db9"
+    },
+    "mock_erp.bom_versions": {
+      "count": 1,
+      "sha256": "907d5028a2a94ab708b1b5af8a243acdf210d5db8faacf3a3be6d6f458dd7dc0"
+    },
+    "mock_erp.bom_items": {
+      "count": 8,
+      "sha256": "52d5c81bbf7fbefb07904b901b2d5df4daa244f959b92d8a958141d4a249e206"
+    },
+    "mock_erp.supply_orders": {
+      "count": 5,
+      "sha256": "36147b89affbcb8d3e1f0d3cf9effc169d8636e19e4eecc183ef363843bb7610"
+    },
+    "mock_wms.inventory_balances": {
+      "count": 9,
+      "sha256": "47237f63f72243ab95cea8754becd8166a393683b2603beb1b585a71b0f94b55"
+    }
+  }
+}

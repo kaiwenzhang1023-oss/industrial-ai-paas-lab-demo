@@ -1,0 +1,31 @@
+{
+  "version": "RC3.5 RC6",
+  "status": "DEVELOPMENT_CANDIDATE",
+  "pytest_returncode": 0,
+  "pytest_summary": "56 passed in 1.53s",
+  "javascript_syntax": {
+    "app.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "enterprise-console.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "engine.js": {
+      "passed": true,
+      "stderr": ""
+    }
+  },
+  "python_compile": true,
+  "PG16": "HOLD - not run",
+  "browser_e2e": "HOLD - not run",
+  "Render": "HOLD - not deployed",
+  "limitations": [
+    "Not verified on isolated PG16",
+    "No full cross-level Pegging provenance",
+    "Batch reviews are per-item transactions, not all-or-nothing",
+    "Compensation is internal review only, no real inventory or MES reversal",
+    "G01/G02/G03 map existing B/C/D scenarios, no invented prices or actual downtime"
+  ]
+}

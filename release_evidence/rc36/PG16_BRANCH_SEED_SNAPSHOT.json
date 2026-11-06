@@ -1,0 +1,31 @@
+{
+  "as_of": "2026-10-29",
+  "orders": [
+    {"order_id": "SO-2026-001", "product": "EM-100", "qty": "100", "due": "2026-11-30", "priority": 10},
+    {"order_id": "SO-2026-002", "product": "EM-100", "qty": "20", "due": "2026-12-03", "priority": 5}
+  ],
+  "items": {
+    "BR-01": {"kind": "BUY", "lead_days": 4, "on_hand": "250", "reserved": "0", "blocked": "0", "safety": "0", "moq": "10", "lot": "10", "receipts": [], "uom": "PCS"},
+    "CW-01": {"kind": "BUY", "lead_days": 3, "on_hand": "15", "reserved": "0", "blocked": "0", "safety": "0", "moq": "10", "lot": "10", "receipts": [["2026-11-24", "5"]], "uom": "PCS"},
+    "EM-100": {"kind": "MAKE", "lead_days": 3, "on_hand": "0", "reserved": "0", "blocked": "0", "safety": "0", "moq": "0", "lot": "1", "receipts": [], "uom": "PCS"},
+    "HS-01": {"kind": "BUY", "lead_days": 5, "on_hand": "70", "reserved": "0", "blocked": "0", "safety": "0", "moq": "10", "lot": "10", "receipts": [["2026-11-26", "10"], ["2026-11-29", "40"]], "uom": "PCS"},
+    "RC-01": {"kind": "BUY", "lead_days": 3, "on_hand": "5", "reserved": "0", "blocked": "0", "safety": "0", "moq": "10", "lot": "10", "receipts": [], "uom": "PCS"},
+    "RT-100": {"kind": "MAKE", "lead_days": 2, "on_hand": "80", "reserved": "0", "blocked": "0", "safety": "0", "moq": "0", "lot": "1", "receipts": [["2026-11-26", "5"]], "uom": "PCS"},
+    "SC-01": {"kind": "BUY", "lead_days": 3, "on_hand": "10", "reserved": "0", "blocked": "0", "safety": "0", "moq": "10", "lot": "10", "receipts": [["2026-11-27", "15"]], "uom": "PCS"},
+    "SH-01": {"kind": "BUY", "lead_days": 3, "on_hand": "15", "reserved": "0", "blocked": "0", "safety": "0", "moq": "10", "lot": "10", "receipts": [], "uom": "PCS"},
+    "ST-100": {"kind": "MAKE", "lead_days": 2, "on_hand": "60", "reserved": "0", "blocked": "0", "safety": "0", "moq": "0", "lot": "1", "receipts": [], "uom": "PCS"}
+  },
+  "bom": [
+    ["EM-100", "ST-100", "1"], ["EM-100", "RT-100", "1"],
+    ["EM-100", "BR-01", "2"], ["EM-100", "HS-01", "1"],
+    ["ST-100", "SC-01", "1"], ["ST-100", "CW-01", "1"],
+    ["RT-100", "RC-01", "1"], ["RT-100", "SH-01", "1"]
+  ],
+  "provenance": {
+    "source": "Neon RC3.6 child branch SELECT-only inspection",
+    "project_id": "super-glade-55757112",
+    "branch_id": "br-green-glade-bbnahfli",
+    "database": "industrial_v19b_preview",
+    "note": "Captured source seed rows for offline replay only. This is not a persisted RC3.6 MRP run or PG16 business-gate result."
+  }
+}

@@ -1,0 +1,17 @@
+# Separate candidate service ONLY; never deploy this configuration over the frozen RC2 service.
+# Requires the UX RC3.1 GitHub branch to be pushed first.
+services:
+  - type: web
+    name: industrial-ai-paas-v19b-ux-rc31-candidate
+    runtime: docker
+    plan: free
+    region: virginia
+    dockerfilePath: ./Dockerfile.version-b-preview
+    dockerContext: .
+    autoDeploy: false
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: PREVIEW_SESSION_SECRET
+        sync: false

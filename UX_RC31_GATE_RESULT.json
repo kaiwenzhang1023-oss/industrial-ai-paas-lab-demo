@@ -1,0 +1,64 @@
+{
+  "candidate": "Version B Enterprise Console UX RC3.1",
+  "created_on": "2026-11-04",
+  "baseline_commit": "ea20d05f24f9d641442339dcff3d1b48e063d091",
+  "status": "CANDIDATE_OFFLINE_PASS / CLOUD_DEPLOY_HOLD / UX_LIVE_PG16_HOLD",
+  "checks": {
+    "offline_backend_pytest": {
+      "result": "PASS",
+      "passed": 14,
+      "tool": "python -m pytest tests/test_preview_rc2.py -q"
+    },
+    "offline_browser_mock": {
+      "result": "PASS",
+      "passed": 14,
+      "total": 14,
+      "tool": "python tests/browser_enterprise_rc3.py",
+      "real_http": false
+    },
+    "javascript_syntax": {
+      "result": "PASS",
+      "tool": "node --check enterprise_workbench/site/enterprise-console.js"
+    },
+    "frozen_backend_git_blob_equality": {
+      "result": "PASS",
+      "verified": 7,
+      "notes": "enterprise-status.js, rc2.py, rc4.py, worker.py, app.js, preview_cloud/app.py, Dockerfile; SHA matched GitHub v19-version-b-preview"
+    },
+    "live_neon_readonly": {
+      "result": "PASS_HISTORICAL_RC2_ONLY",
+      "pg_version": "16.15",
+      "mrp_runs": 2,
+      "decisions": 2,
+      "outbox": 2,
+      "receipts": 2,
+      "audit_events": 4,
+      "both_executed_internal": true,
+      "both_worker_done": true,
+      "both_attempts": 1,
+      "orphaned_joins": 0
+    },
+    "new_independent_render_deploy": {
+      "result": "HOLD",
+      "blocker": "GitHub connector create_branch and create_blob both rejected 403; no candidate branch pushed"
+    },
+    "new_candidate_live_pg16_e2e": {
+      "result": "NOT_EXECUTED",
+      "blocker": "No candidate Render service running candidate UX RC3.1 source"
+    },
+    "legacy_render_service": {
+      "result": "UNCHANGED",
+      "service": "industrial-ai-paas-v19-version-b-preview",
+      "source_commit": "ea20d05f24f9d641442339dcff3d1b48e063d091"
+    },
+    "version_a": "UNCHANGED"
+  },
+  "security": {
+    "secret_in_source": false,
+    "live_db_writes_in_this_turn": false,
+    "old_render_modified": false,
+    "candidate_branch_created": false,
+    "real_erp_mes_srm_write": false
+  },
+  "next_step": "Use RUN_PUBLISH_UX_RC31_CANDIDATE.ps1 once to publish isolated branch; only then provision isolated Render+Neon candidate and run LIVE_E2E"
+}

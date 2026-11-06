@@ -1,0 +1,13 @@
+{
+  "chromium_launch": "PASS",
+  "urls": {
+    "about:blank": "NAVIGATED",
+    "data:text/html,<title>RC36</title>": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at data:text/html,<title>RC36</title>",
+    "http://127.0.0.1:9/": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:9/",
+    "https://rc36.test/index.html": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://rc36.test/index.html"
+  },
+  "proxy_env": {
+    "http_proxy_set": false,
+    "https_proxy_set": false
+  }
+}

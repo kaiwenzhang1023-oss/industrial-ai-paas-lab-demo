@@ -1,0 +1,117 @@
+{
+  "gate": "RC36_PG16_BRANCH_READONLY_INSPECTION",
+  "status": "PASS_READ_ONLY_CONNECTOR_INSPECTION",
+  "observed_at_utc": "2026-11-06T01:33:00Z",
+  "project": {
+    "project_id": "super-glade-55757112",
+    "project_name": "industrial-ai-paas-v19-version-b-preview",
+    "pg_version_major": 16,
+    "region": "aws-us-east-1"
+  },
+  "branch": {
+    "branch_id": "br-green-glade-bbnahfli",
+    "branch_name": "rc36-pg16-isolated-20261106",
+    "state": "ready",
+    "default": false,
+    "primary": false,
+    "parent_branch_id": "br-divine-glitter-bb7wf2ve",
+    "parent_branch_name": "rc35-final-gate-isolated-20261105",
+    "branch_written_data_bytes_at_observation": 0
+  },
+  "endpoint": {
+    "endpoint_id": "ep-holy-star-bbv8lyg7",
+    "endpoint_host": "ep-holy-star-bbv8lyg7.c-15.us-east-1.aws.neon.tech",
+    "branch_id": "br-green-glade-bbnahfli",
+    "state": "active",
+    "pooled_endpoint_used": false
+  },
+  "database": {
+    "database_name": "industrial_v19b_preview",
+    "postgres_server_version_num": 160015,
+    "current_user_seen_by_connector": "v19b_preview_owner",
+    "transaction_read_only_from_connector_session": "off",
+    "note": "Connector inspection issued SELECT statements only. This is not the Windows DSN read-only transaction check; the one-shot script separately requires transaction_read_only=on using v19b_app_runtime."
+  },
+  "runtime_role": {
+    "required_role": "v19b_app_runtime",
+    "exists_and_can_login": true,
+    "is_superuser": false,
+    "can_create_db": false,
+    "can_create_role": false,
+    "required_table_privilege_checks": 36,
+    "required_table_privileges_passed": 36,
+    "required_table_privileges_missing": [],
+    "note": "Role metadata and has_table_privilege checks were read-only. The Windows DSN must authenticate as this role.",
+    "required_schema_usage_checks": 4,
+    "required_schema_usage_passed": 4,
+    "audit_sequence_usage": true
+  },
+  "schema": {
+    "total_visible_tables": 29,
+    "required_tables_checked": 20,
+    "required_tables_present": 20,
+    "required_tables_missing": [],
+    "required_column_groups_checked": 20,
+    "required_columns_missing": {},
+    "approval_single_terminal_decision_index": true,
+    "outbox_lease_poll_index": true,
+    "proposal_state_constraint": true,
+    "migration_ledger_table_count": 0,
+    "migration_provenance": "STRUCTURE_VERIFIED_NO_LEDGER"
+  },
+  "source_seed_counts": {
+    "mock_erp.sales_orders": 2,
+    "mock_erp.materials": 9,
+    "mock_erp.bom_versions": 1,
+    "mock_erp.bom_items": 8,
+    "mock_erp.supply_orders": 5,
+    "mock_wms.inventory_balances": 9
+  },
+  "material_uom": {
+    "materials": 9,
+    "missing_or_blank_uom": 0,
+    "observed_units": [
+      "PCS"
+    ]
+  },
+  "rc36_gate_rows_before_business_gate": {
+    "tenant_rows": 0,
+    "requirement_run_rows": 0
+  },
+  "operation_scope": {
+    "sql_statements_executed": "SELECT only",
+    "ddl_executed": false,
+    "dml_executed": false,
+    "migrations_executed": false,
+    "fault_injection_executed": false,
+    "source_erp_wms_mutated": false,
+    "rc35_parent_branch_mutated": false,
+    "rc35_frozen_database_mutated": false,
+    "connection_secret_recorded": false
+  },
+  "limitations": [
+    "This connector inspection did not use the user's local DSN and did not prove transaction_read_only=on for that DSN.",
+    "No RC3.6 MRP run, approval, Outbox, Worker, retry, receipt, audit, or A/B business rows have been created yet.",
+    "No migrations are required or executed by the current RC3.6 gate; the inherited schema is checked structurally, and no migration ledger exists.",
+    "The RC3.6 branch is a child of the RC3.5 isolated test branch, not a child of the RC3.5 frozen production/default database. All future test writes are scoped to the RC3.6 child branch and unique rc36gate-* tenants."
+  ],
+  "source_manifest": {
+    "file_count": 187,
+    "sha256": "eea03501a804549939bc21e7b31849a142d45ee13bc8bdc17a1f644a6f172d19",
+    "integrity": "PASS"
+  },
+  "offline_seed_replay": {
+    "status": "PASS_OFFLINE_ONLY",
+    "scenarios": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "snapshot_recompute": "MATCH",
+    "supply_source_caps": "MATCH",
+    "native_a_b_numeric": "MATCH",
+    "order_level_pegging": "MATCH",
+    "database_connected": false
+  }
+}

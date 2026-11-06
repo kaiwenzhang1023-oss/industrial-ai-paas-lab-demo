@@ -1,0 +1,27 @@
+{
+  "release_status": "HOLD",
+  "baseline": "RC35_RC6",
+  "new_bom_lineage": "FROZEN_SNAPSHOT_GRAPH_VALIDATED",
+  "checks": {
+    "python_tests": "62 passed",
+    "js_syntax": "PASS",
+    "python_compile": "PASS",
+    "isolated_pg16_schema": "PASS_READ_ONLY_INSPECTION",
+    "isolated_pg16_business_e2e": "HOLD",
+    "browser_e2e": "HOLD_ERR_BLOCKED_BY_ADMINISTRATOR",
+    "render_deploy": "NOT_STARTED_QUALITY_GATE",
+    "full_physical_pegging": "OUT_OF_SCOPE",
+    "factory_compensation": "OUT_OF_SCOPE",
+    "golden_G01_G02_G03": "SCENARIO_ALIAS_ONLY"
+  },
+  "isolated_neon_branch": "rc35-final-gate-isolated-20261105",
+  "branch_id": "br-divine-glitter-bb7wf2ve",
+  "pg_version": "16.15",
+  "render_services_unchanged": true,
+  "warnings": [
+    "RC3.4 PG16 gate currently pins previous candidate endpoint and must be deliberately adapted to RC3.5 isolation before execution.",
+    "Real enterprise full workflow and browser E2E not executed.",
+    "G01/G02/G03 aliases are not fully independent golden examples.",
+    "Do not release or deploy until all blocking gates close."
+  ]
+}

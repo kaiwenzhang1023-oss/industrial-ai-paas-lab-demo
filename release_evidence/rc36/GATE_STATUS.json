@@ -1,0 +1,46 @@
+{
+  "release": "RC3.6",
+  "LOCAL": "PASS",
+  "LOCAL_EVIDENCE": {
+    "python": "3.13.5 container",
+    "pytest": "134 passed",
+    "node_syntax": "PASS",
+    "note": "Windows PG16 one-shot will repeat LOCAL regression under Python 3.14.x.",
+    "source_manifest_file_count": 187,
+    "source_manifest_sha256": "eea03501a804549939bc21e7b31849a142d45ee13bc8bdc17a1f644a6f172d19",
+    "source_manifest_integrity": "PASS"
+  },
+  "BROWSER_MOCK": "PASS",
+  "BROWSER_MOCK_EVIDENCE": {
+    "runner": "Windows Chromium + Playwright",
+    "tests": "4 passed / 4 total",
+    "duration": "6.07s",
+    "api_mode": "mocked API only; not PG16 E2E",
+    "source": "user-provided Windows test result"
+  },
+  "PG16_BRANCH_METADATA": "PASS_READ_ONLY_CONNECTOR_INSPECTION",
+  "PG16_READONLY_DSN_PREFLIGHT": "HOLD_USER_WINDOWS_DSN_NOT_RUN",
+  "PG16_BUSINESS": "HOLD_NOT_RUN_REQUIRES_EXPLICIT_ACK",
+  "PG16": "HOLD",
+  "BROWSER_REAL_E2E": "HOLD_NOT_RUN",
+  "RENDER": "HOLD_NOT_RUN",
+  "migrations_executed": false,
+  "ddl_executed": false,
+  "dml_executed": false,
+  "source_erp_wms_mutations": false,
+  "worker_fault_injection_executed": false,
+  "rc35_parent_mutated": false,
+  "target": {
+    "project_id": "super-glade-55757112",
+    "branch_id": "br-green-glade-bbnahfli",
+    "branch_name": "rc36-pg16-isolated-20261106",
+    "parent_branch_id": "br-divine-glitter-bb7wf2ve",
+    "endpoint_id": "ep-holy-star-bbv8lyg7",
+    "database": "industrial_v19b_preview",
+    "postgres_server_version_num": 160015,
+    "required_runtime_role": "v19b_app_runtime"
+  },
+  "next_action": "Run RUN_RC36_PG16_ONE_SHOT.ps1 on Windows. The script performs local regression, a transaction-read-only DSN preflight, then asks for explicit acknowledgement before isolated RC3.6 business DML and one Worker fault/retry test.",
+  "OFFLINE_SEED_REPLAY": "PASS_OFFLINE_ONLY",
+  "OFFLINE_SEED_REPLAY_EVIDENCE": "PG16_OFFLINE_SEED_REPLAY.json"
+}

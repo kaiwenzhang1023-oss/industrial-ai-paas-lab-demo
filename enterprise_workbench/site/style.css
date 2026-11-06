@@ -111,3 +111,23 @@ body{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;background
 #vbConsole .vbc-btn.tiny{min-height:31px;padding:6px 10px}
 #vbConsole .vbc-order-table-scroll{max-width:100%;overflow-x:auto}
 @media(max-width:760px){.heading{align-items:flex-start}.rc35-home-entry{padding:13px}.vbc-material-toolbar{align-items:stretch}.vbc-global-actions{width:100%;margin-left:0}.vbc-global-actions button{flex:1}.topright{flex-wrap:wrap}.tablewrap{max-width:calc(100vw - 32px)}}
+
+/* RC3.6 information architecture closure: business controls belong to Overview only. */
+.rc36-business-controls{border:1px solid #dfe6f0;background:#fff;border-radius:6px;padding:16px 18px;margin:0 0 16px}
+.rc36-business-controls[hidden]{display:none!important}
+.rc36-business-controls-head{display:flex;gap:8px 16px;align-items:baseline;flex-wrap:wrap;margin-bottom:12px}
+.rc36-business-controls-head strong{font-size:15px;font-weight:650;color:#1d2f49}
+.rc36-business-controls-head span{font-size:12px;color:#63758e}
+.rc36-business-controls .toolbar{margin:0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.rc36-business-controls .toolbar label{font-size:12px;white-space:nowrap}
+.rc36-business-controls .toolbar select{max-width:100%;min-height:36px}
+.rc36-settings-intro{margin-bottom:14px}
+.rc36-settings-intro h2{font-size:16px;margin:0 0 7px}
+.rc36-settings-intro p{font-size:13px;color:#65758e;line-height:1.7;margin:0}
+.rc36-settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.rc36-settings-grid .panel{margin:0;min-width:0}
+.rc36-settings-grid dl{margin:10px 0 0}
+.rc36-settings-grid dt{font-size:13px;font-weight:650;margin:14px 0 5px}
+.rc36-settings-grid dd{font-size:12px;line-height:1.75;color:#64758d;margin:0}
+@media(max-width:780px){.rc36-settings-grid{grid-template-columns:1fr}.rc36-business-controls{padding:12px}.rc36-business-controls .toolbar{align-items:stretch}.rc36-business-controls .toolbar select,.rc36-business-controls .toolbar button{width:100%}}
+@media(max-width:850px){.sidebarbottom.sidebar-utilities{display:flex;margin-top:8px;padding:8px 12px;justify-content:flex-start;gap:18px}.sidebar-utility{min-height:32px}}
